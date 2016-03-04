@@ -15,6 +15,7 @@ public class VkMono : MonoBehaviour {
 	private Dictionary<string, CallBack> mapFunction = new Dictionary<string, CallBack>();
 
 	#if UNITY_IPHONE && !UNITY_EDITOR
+
 	[DllImport("__Internal")]
 	static extern void init(string idVkApp);
 	[DllImport("__Internal")]
@@ -27,6 +28,33 @@ public class VkMono : MonoBehaviour {
 	static extern bool isLoggedIn();
 	[DllImport("__Internal")]
 	static extern void testCaptcha();
+	#elif UNITY_ANDROID && !UNITY_EDITOR
+	public static AndroidJavaClass unityActivityClassLeft;
+	public static AndroidJavaObject unityActivityClass;
+	public static AndroidJavaClass sdk;
+	public static AndroidJavaClass unityActivityClassInit;
+	static void init(string idVkApp){
+		var activity = new AndroidJavaClass("com.unity3d.player.UnityPlayer").GetStatic<AndroidJavaObject>("currentActivity");
+		unityActivityClass.CallStatic("init", activity, idVkApp);
+	}
+	static void login(string scopes){
+		unityActivityClass.Call<string>("call", "login", scopes);
+	}
+	static void logout(){
+		unityActivityClass.Call<string>("call", "logout", "");
+	}
+	static string apiCall(string method, string param){
+		return unityActivityClass.Call<string>("call", "apiCall", method, param);
+	}
+	static bool isLoggedIn(){
+		return unityActivityClass.Call<string>("call", "isLoggedIn", "")=="1";
+	}
+	static void testCaptcha(){
+		unityActivityClass.Call<string>("call", "testCaptcha", "");
+	}
+	static void log(string str){
+		unityActivityClass.CallStatic("log", str);
+	}
 #else
 	static void init (string filename) {
 	}
@@ -49,6 +77,11 @@ public class VkMono : MonoBehaviour {
 	static void testCaptcha () {
 	}
 
+	static void log(string str){
+		Debug.Log ("piiiuuuuuu");
+	}
+
+
 	#endif // if UNITY_IPHONE && !UNITY_EDITOR
 
 	void LoadTexture () {
@@ -65,7 +98,13 @@ public class VkMono : MonoBehaviour {
 
 	void Start () {
 		Application.stackTraceLogType = StackTraceLogType.None;
+		#if UNITY_ANDROID && !UNITY_EDITOR
+		unityActivityClass = new AndroidJavaClass("com.nikaent.unity.vk.VK");
+		unityActivityClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer").GetStatic<AndroidJavaObject>("currentActivity");
+
+		#endif
 	}
+
 
 	void OnGUI () {
 		if (GUI.Button (new Rect (10, 0, 100, 50), "Init"))
@@ -85,6 +124,9 @@ public class VkMono : MonoBehaviour {
 				mapFunction.Remove (idRequare);
 			};
 			mapFunction [UserGet()] = myFunc;
+		}
+		if (GUI.Button (new Rect (10, 300, 100, 50), "log")) {
+			log ("log test!!!!!!!!!!!!!!!!!!!!!!");
 		}
 	}
 

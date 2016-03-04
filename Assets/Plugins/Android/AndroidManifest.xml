@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.nikaent.unity.vk"
+      android:versionCode="1"
+      android:versionName="1.0">
+  <uses-sdk android:minSdkVersion="9" />
+  <application android:label="@string/app_name"
+               android:icon="@drawable/app_icon">
+    <activity android:name="com.nikaent.unity.vk.VK"
+              android:configChanges="keyboardHidden|orientation"
+              android:label="@string/app_name">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:name="com.vk.sdk.VKServiceActivity" android:label="ServiceActivity"/>
+    <activity android:name="com.nikaent.unity.vk.activity.AuthActivity" android:label="AuthActivity"/>
+  </application>
+
+  <uses-permission android:name="android.permission.INTERNET"/>
+  
+</manifest>
