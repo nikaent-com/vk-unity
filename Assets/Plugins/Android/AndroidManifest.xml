@@ -15,7 +15,7 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <activity android:name="com.vk.sdk.VKServiceActivity" android:label="ServiceActivity"/>
+    <activity android:name="com.vk.sdk.VKServiceActivity" android:label="ServiceActivity" android:theme="@style/VK.Transparent" />
     <activity android:name="com.nikaent.unity.vk.activity.AuthActivity" android:label="AuthActivity"/>
   </application>
 
