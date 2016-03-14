@@ -133,6 +133,7 @@ public class VkMono : MonoBehaviour {
 	public void trace (string str) {
 		Debug.Log ("from Unity : " + str);
 	}
+
 	public void call (string data) {
 		Debug.Log ("data : " + data);
 
