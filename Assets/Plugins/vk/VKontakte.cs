@@ -19,49 +19,52 @@ namespace com.nikaent.vk {
 		public List<Scopes> listScopes = new List<Scopes>{Scopes.notify, Scopes.friends, Scopes.wall, Scopes.groups, Scopes.email, Scopes.offline, Scopes.nohttps};
 
 		#if UNITY_IPHONE && !UNITY_EDITOR
-		
-	[DllImport("__Internal")]
-	static extern void init(string idVkApp);
-	[DllImport("__Internal")]
-	static extern void login(string scopes);
-	[DllImport("__Internal")]
-	static extern void logout();
-	[DllImport("__Internal")]
-	static extern string apiCall(string method, string param);
-	[DllImport("__Internal")]
-	static extern bool isLoggedIn();
-	[DllImport("__Internal")]
-	static extern void testCaptcha();
-	
-#elif UNITY_ANDROID && !UNITY_EDITOR
-	private static AndroidJavaClass unityActivityClassLeft;
-	private static AndroidJavaObject unityActivityClass;
-	private static AndroidJavaClass sdk;
-	private static AndroidJavaClass unityActivityClassInit;
-	static void _init(string idVkApp){
-	var activity = new AndroidJavaClass("com.unity3d.player.UnityPlayer").GetStatic<AndroidJavaObject>("currentActivity");
-	unityActivityClass.CallStatic("init", activity, idVkApp);
-	}
-	static void _login(string scopes){
-	unityActivityClass.Call<string>("call", "login", scopes);
-	}
-	static void _logout(){
-	unityActivityClass.Call<string>("call", "logout", "");
-	}
-	static string _apiCall(string method, string param){
-	return unityActivityClass.Call<string>("call", "apiCall", method, param);
-	}
-	static bool _isLoggedIn(){
-	return unityActivityClass.Call<string>("call", "isLoggedIn", "")=="1";
-	}
-	static void _testCaptcha(){
-	unityActivityClass.Call<string>("call", "testCaptcha", "");
-	}
-	static void _log(string str){
-	unityActivityClass.CallStatic("log", str);
-	}
-	
-#else
+
+		[DllImport("__Internal")]
+		static extern void _init(string idVkApp);
+		[DllImport("__Internal")]
+		static extern void _login(string scopes);
+		[DllImport("__Internal")]
+		static extern void _logout();
+		[DllImport("__Internal")]
+		static extern string _apiCall(string method, string param);
+		[DllImport("__Internal")]
+		static extern bool _isLoggedIn();
+		[DllImport("__Internal")]
+		static extern void _testCaptcha();
+		static void _log(string str) {
+			Debug.Log (str);
+		}
+
+		#elif UNITY_ANDROID && !UNITY_EDITOR
+		private static AndroidJavaClass unityActivityClassLeft;
+		private static AndroidJavaObject unityActivityClass;
+		private static AndroidJavaClass sdk;
+		private static AndroidJavaClass unityActivityClassInit;
+		static void _init(string idVkApp){
+		var activity = new AndroidJavaClass("com.unity3d.player.UnityPlayer").GetStatic<AndroidJavaObject>("currentActivity");
+		unityActivityClass.CallStatic("init", activity, idVkApp);
+		}
+		static void _login(string scopes){
+		unityActivityClass.Call<string>("call", "login", scopes);
+		}
+		static void _logout(){
+		unityActivityClass.Call<string>("call", "logout", "");
+		}
+		static string _apiCall(string method, string param){
+		return unityActivityClass.Call<string>("call", "apiCall", method, param);
+		}
+		static bool _isLoggedIn(){
+		return unityActivityClass.Call<string>("call", "isLoggedIn", "")=="1";
+		}
+		static void _testCaptcha(){
+		unityActivityClass.Call<string>("call", "testCaptcha", "");
+		}
+		static void _log(string str){
+		unityActivityClass.CallStatic("log", str);
+		}
+
+		#else
 		static void _init (string filename) {
 		}
 
@@ -115,8 +118,8 @@ namespace com.nikaent.vk {
 		void Start () {
 			_inst = this;
 			#if UNITY_ANDROID && !UNITY_EDITOR
-				unityActivityClass = new AndroidJavaClass("com.nikaent.unity.vk.VK");
-				unityActivityClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer").GetStatic<AndroidJavaObject>("currentActivity");
+			unityActivityClass = new AndroidJavaClass("com.nikaent.unity.vk.VK");
+			unityActivityClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer").GetStatic<AndroidJavaObject>("currentActivity");
 			#endif
 			_init (APP_ID);
 		}
@@ -126,8 +129,6 @@ namespace com.nikaent.vk {
 		}
 
 		public void call (string data) {
-			Debug.Log ("data : " + data);
-
 			Dictionary<string, object> request = JsonFx.Json.JsonReader.Deserialize (data) as Dictionary<string, object>;
 
 			string requestName = request.Keys.ToList () [0];
