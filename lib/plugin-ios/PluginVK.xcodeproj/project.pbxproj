@@ -1,0 +1,294 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6758E78D1C71EF1600DF52F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6758E78C1C71EF1600DF52F9 /* Foundation.framework */; };
+		6771B1D71C747B160098C831 /* libVKSdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6771B1D61C747B160098C831 /* libVKSdk.a */; };
+		6771B1D91C747B2A0098C831 /* VKSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6771B1D81C747B2A0098C831 /* VKSdk.framework */; };
+		67C909CE1C86FFCE00205957 /* PluginVK.mm in Sources */ = {isa = PBXBuildFile; fileRef = 67C909C71C86FCD200205957 /* PluginVK.mm */; };
+		67C909D11C87011500205957 /* VKStartScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C909CF1C87011500205957 /* VKStartScreen.m */; };
+		67C909D21C87011500205957 /* VKStartScreen.h in Sources */ = {isa = PBXBuildFile; fileRef = 67C909D01C87011500205957 /* VKStartScreen.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6758E77D1C71EDE000DF52F9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		6734E59D1C86FA8000A20A97 /* PluginVK */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PluginVK; sourceTree = "<group>"; };
+		6758E77F1C71EDE000DF52F9 /* libPluginVK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPluginVK.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6758E78C1C71EF1600DF52F9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6771B1D61C747B160098C831 /* libVKSdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libVKSdk.a; sourceTree = "<group>"; };
+		6771B1D81C747B2A0098C831 /* VKSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VKSdk.framework; sourceTree = "<group>"; };
+		6771B2191C75F3EF0098C831 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		6771B21B1C75F40C0098C831 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		6771B21D1C75F4150098C831 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6771B21F1C75F41C0098C831 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6771B2211C75F4250098C831 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		6771B2231C75F4540098C831 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		67C909C71C86FCD200205957 /* PluginVK.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = PluginVK.mm; path = PluginVK/PluginVK.mm; sourceTree = "<group>"; };
+		67C909CF1C87011500205957 /* VKStartScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = VKStartScreen.m; path = PluginVK/VKStartScreen.m; sourceTree = "<group>"; };
+		67C909D01C87011500205957 /* VKStartScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VKStartScreen.h; path = PluginVK/VKStartScreen.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6758E77C1C71EDE000DF52F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6758E78D1C71EF1600DF52F9 /* Foundation.framework in Frameworks */,
+				6771B1D91C747B2A0098C831 /* VKSdk.framework in Frameworks */,
+				6771B1D71C747B160098C831 /* libVKSdk.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6758E7761C71EDE000DF52F9 = {
+			isa = PBXGroup;
+			children = (
+				67C909CF1C87011500205957 /* VKStartScreen.m */,
+				67C909D01C87011500205957 /* VKStartScreen.h */,
+				67C909C71C86FCD200205957 /* PluginVK.mm */,
+				6771B2231C75F4540098C831 /* SystemConfiguration.framework */,
+				6771B2211C75F4250098C831 /* CoreFoundation.framework */,
+				6771B21F1C75F41C0098C831 /* UIKit.framework */,
+				6771B21D1C75F4150098C831 /* CoreGraphics.framework */,
+				6771B21B1C75F40C0098C831 /* MobileCoreServices.framework */,
+				6771B2191C75F3EF0098C831 /* SafariServices.framework */,
+				6771B1D81C747B2A0098C831 /* VKSdk.framework */,
+				6771B1D61C747B160098C831 /* libVKSdk.a */,
+				6758E78C1C71EF1600DF52F9 /* Foundation.framework */,
+				6758E7801C71EDE000DF52F9 /* Products */,
+				6734E59D1C86FA8000A20A97 /* PluginVK */,
+			);
+			sourceTree = "<group>";
+		};
+		6758E7801C71EDE000DF52F9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6758E77F1C71EDE000DF52F9 /* libPluginVK.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6758E77E1C71EDE000DF52F9 /* PluginVK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6758E7881C71EDE000DF52F9 /* Build configuration list for PBXNativeTarget "PluginVK" */;
+			buildPhases = (
+				6758E77B1C71EDE000DF52F9 /* Sources */,
+				6758E77C1C71EDE000DF52F9 /* Frameworks */,
+				6758E77D1C71EDE000DF52F9 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PluginVK;
+			productName = ane;
+			productReference = 6758E77F1C71EDE000DF52F9 /* libPluginVK.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6758E7771C71EDE000DF52F9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Aleksey Kabanov";
+				TargetAttributes = {
+					6758E77E1C71EDE000DF52F9 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 6758E77A1C71EDE000DF52F9 /* Build configuration list for PBXProject "PluginVK" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6758E7761C71EDE000DF52F9;
+			productRefGroup = 6758E7801C71EDE000DF52F9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6758E77E1C71EDE000DF52F9 /* PluginVK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6758E77B1C71EDE000DF52F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67C909D11C87011500205957 /* VKStartScreen.m in Sources */,
+				67C909D21C87011500205957 /* VKStartScreen.h in Sources */,
+				67C909CE1C86FFCE00205957 /* PluginVK.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6758E7861C71EDE000DF52F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6758E7871C71EDE000DF52F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6758E7891C71EDE000DF52F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = PluginVK;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6758E78A1C71EDE000DF52F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = PluginVK;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6758E77A1C71EDE000DF52F9 /* Build configuration list for PBXProject "PluginVK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6758E7861C71EDE000DF52F9 /* Debug */,
+				6758E7871C71EDE000DF52F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6758E7881C71EDE000DF52F9 /* Build configuration list for PBXNativeTarget "PluginVK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6758E7891C71EDE000DF52F9 /* Debug */,
+				6758E78A1C71EDE000DF52F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6758E7771C71EDE000DF52F9 /* Project object */;
+}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="VK ANE" default="all">
+    <!-- Config -->
+    <property file="build.properties"/>
+
+    <!-- All -->
+    <target name="all" depends="ios, android" description="Full build"/>
+    
+    <!-- iOS -->
+    <target name="ios" description="Build iOS Library">
+        <mkdir dir="../${ios.dir}/build/"/>
+
+        <exec executable="xcodebuild" failonerror="true" dir="../${ios.dir}/">
+            <arg line="-project ${ios.name}.xcodeproj"/>
+            <arg line="-alltargets clean"/>
+        </exec>
+
+        <exec executable="xcodebuild" failonerror="true" dir="../${ios.dir}/">
+            <arg line="-project ${ios.name}.xcodeproj"/>
+            <arg line="-sdk ${ios.sdkversion}"/>
+            <arg line="-alltargets"/>
+            <arg line="-configuration Release"/>
+            <arg line="SYMROOT=build/"/>
+        </exec>
+
+        <copy file="../${ios.dir}/build/Release-iphoneos/lib${ios.name}.a" tofile="../bin/ios/lib${ios.name}.a" overwrite="true"/>
+        <delete dir="../${ios.dir}/build/"/>
+    </target>
+
+
+    <!-- Android -->
+    <target name="android" description="Build Android Library">
+        <delete dir="../${android.dir}/temp"/>
+        <mkdir dir="../${android.dir}/temp/classes"/>
+        
+        <javac compiler="modern" target="1.6" source="1.6" srcdir="../${android.dir}/src" destdir="../${android.dir}/temp/classes" includeantruntime="false">
+            <classpath>
+                <pathelement location="${android.sdk}/android.jar"/>
+                <fileset dir="../${android.dir}/libs/" includes="*.jar" />
+            </classpath>
+        </javac>
+        
+        <jar basedir="../${android.dir}/temp/classes" destfile="../bin/android/lib${android.name}.jar"/>
+        <delete dir="../${android.dir}/temp"/>
+    </target>
+
+</project>
