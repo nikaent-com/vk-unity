@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C3C11D48933679AA097845C55AF99CE791F9CDC9",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C3C11D48933679AA097845C55AF99CE791F9CDC9" : 0,
+    "70A6D6F8DA7857052585C8D89E80F13452CF344F" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A2B5A6BC-F3C5-41C7-908D-457782C1DD88",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C3C11D48933679AA097845C55AF99CE791F9CDC9" : "vk-unity\/",
+    "70A6D6F8DA7857052585C8D89E80F13452CF344F" : "UnityVkPlugin\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "PluginVK",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "lib\/plugin-ios\/PluginVK.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "kape.su:UnityVkPlugin.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "70A6D6F8DA7857052585C8D89E80F13452CF344F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:nikaent-com\/vk-unity.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C3C11D48933679AA097845C55AF99CE791F9CDC9"
+    }
+  ]
+}

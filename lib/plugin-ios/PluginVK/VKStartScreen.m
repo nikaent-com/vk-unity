@@ -16,14 +16,21 @@ static NSArray *SCOPE = nil;
     id delegate = [[UIApplication sharedApplication] delegate];
     [[VKSdk initializeWithAppId:appVkId] registerDelegate:self];
     [[VKSdk instance] setUiDelegate:self];
-    [VKSdk wakeUpSession:SCOPE completeBlock:^(VKAuthorizationState state, NSError *error) {
+    NSUserDefaults* userDef = [NSUserDefaults standardUserDefaults];
+    NSArray* str1 = [userDef arrayForKey:@"scopeVK"];
+    
+    if(str1 != NULL){
+    [VKSdk wakeUpSession:str1 completeBlock:^(VKAuthorizationState state, NSError *error) {
         if (state == VKAuthorizationAuthorized) {
-            NSLog(@"VKAuthorizationAuthorized");
+            NSLog(@"AUTH_SUCCESSFUL");
             [self startWorking];
         } else if (error) {
-            [[[UIAlertView alloc] initWithTitle:nil message:[error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+            NSLog(@"FAILED");
         }
     }];
+    }else{
+         NSLog(@"FAILED");
+    }
 }
 
 - (void)startWorking {
@@ -35,6 +42,8 @@ static NSArray *SCOPE = nil;
 }
 
 -(void) auth:(NSArray *) scope{
+    [[NSUserDefaults standardUserDefaults] setObject:scope forKey:@"scopeVK"];
+    NSString *str1 = [NSString stringWithFormat:@"scope: %@",scope];
     [VKSdk authorize:scope];
 }
 
@@ -62,7 +71,7 @@ static NSArray *SCOPE = nil;
     if (result.token) {
         [self startWorking];
     } else if (result.error) {
-        NSLog([NSString stringWithFormat:@"Access denied\n%@", result.error]);
+        NSLog(@"FAILED");
     }
 }
 
